@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+
+import sys
+import geppetto_cli
+
+args = sys.argv
+
+geppetto_cli.main(args)

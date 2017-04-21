@@ -15,5 +15,5 @@ setup(name="geppetto-cli",
         "tqdm",
         "pymodbus3"
       ],
-      scripts=['bin/geppetto'],
+      scripts=['bin/geppetto.py'],
       zip_safe=False)

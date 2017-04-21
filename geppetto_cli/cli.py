@@ -86,7 +86,7 @@ def main(args):
     # Handle the initial setting for each valve
     if "initial_settings" in protocol:
         initial_settings = protocol["initial_settings"]
-        handle_valves(initial_settings, valve_map), client                
+        handle_valves(initial_settings, valve_map, client)              
 
     # Set the step number
     step_num = 1

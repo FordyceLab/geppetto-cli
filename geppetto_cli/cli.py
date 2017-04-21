@@ -45,16 +45,16 @@ def handle_valves(step, valve_map, client):
 
     # Handle pressurizing the appropriate valves
     if "pressurize" in step:
-        pressurize = step["pressurize"]
+        pressurize_valves = step["pressurize"]
 
-        for valve in pressurize:
+        for valve in pressurize_valves:
             pressurize(client, valve_map[valve])
 
     # Handle depressurizing the appropriate valves           
     if "depressurize" in step:
-        depressurize = step["depressurize"]
+        depressurize_valves = step["depressurize"]
         
-        for valve in depressurize:
+        for valve in depressurize_valves:
             depressurize(client, valve_map[valve])
 
 

@@ -33,13 +33,14 @@ def timer(duration, name):
         time.sleep(1)
 
 
-def handle_valves(step, valve_map):
+def handle_valves(step, valve_map, client):
     """
     Function to handle valve switching with each step
 
     Args:
     - step (dict): dictionary of changes for the current step
     - valve_map (dict): dictionary of valve name mappings
+    - client (pymodbus): pymodbus3 connection to Wago
     """
 
     # Handle pressurizing the appropriate valves
@@ -85,14 +86,14 @@ def main(args):
     # Handle the initial setting for each valve
     if "initial_settings" in protocol:
         initial_settings = protocol["initial_settings"]
-        handle_valves(initial_settings, valve_map)                
+        handle_valves(initial_settings, valve_map), client                
 
     # Set the step number
     step_num = 1
 
     # Handle each individual step
     for step in tqdm(protocol["steps"], desc = "Steps completed"):
-        handle_valves(step, valve_map)
+        handle_valves(step, valve_map, client)
         if "name" in step:
             timer(step["duration"], step["name"])
         else:

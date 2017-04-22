@@ -4,24 +4,24 @@ This repository contains the command line interface for the [Geppetto microfluid
 
 ## Installation
 
+The `geppetto-cli` toolset requires Python 3.
+
 Currently, the library can be cloned and installed with:
 
 ```
 git clone https://github.com/FordyceLab/geppetto-cli.git
 cd geppetto-cli
-pip3 install .
+pip install .
 ```
 
-This installation will make the `geppetto` command line utility accessible. You can access the `help` function from the command line with `geppetto -h`.
-
-In the future, the package will be directly `pip` installable.
+This installation will make the `geppetto.py` command line utility accessible. You can access the `help` function from the command line with `geppetto.py -h`.
 
 ## Usage
 
-The help function of `geppetto` (`geppeto -h`) gives a description of the two files needed to run a specific automated protocol. 
+The help function of `geppetto.py` (`geppeto.py -h`) gives a description of the two files needed to run a specific automated protocol. 
 
 ```
-usage: geppetto [-h] map protocol
+usage: geppetto.py [-h] map protocol
 
 Run scripted control of pneumatic system
 
